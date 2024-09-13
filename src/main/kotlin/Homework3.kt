@@ -88,3 +88,4 @@ var eventCoordinator: Person
 var eventMap: String
 var statusHistory: List<String>
 var merchandiseAvailable: Boolean
+
