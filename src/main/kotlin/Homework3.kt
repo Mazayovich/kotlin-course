@@ -4,8 +4,15 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 
 val name: String = "Hackathon Survival"
-val eventDate: LocalDateTime
-var location: String = "Handsome computer club"
+var eventDate: String = "09.11.2024"
+val location: String = "Handsome computer club Tbilisi"
+private val budget: String = "500000"
+var duration: Long = 8*60*60
+private lateinit var contactinformation: String
+var status: String = "Not Started"
+var sponsors: String = "Sponsors list"
+
+
 class EventBudget {
 
     var venueCost: Double = 10000.0
