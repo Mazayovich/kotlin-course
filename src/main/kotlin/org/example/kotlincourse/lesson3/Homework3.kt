@@ -1,7 +1,4 @@
-package org.example
-
-import java.time.LocalDate
-import java.time.LocalDateTime
+package org.example.org.example.kotlincourse.lesson3
 
 val name: String = "Hackathon Survival"
 var eventDate: String = "09.11.2024"
