@@ -63,7 +63,7 @@ next level:
 ((4 * 3) < 13) && !(8 / 4 == 2) || (10 % 3 != 1)
 4*3 = 12
 12<13 true
-2==2, but ! тогда false
+2==2, но ! перед (), тогда false
 1 !=1 false
 true && false || false
 true && false = false
