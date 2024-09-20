@@ -15,7 +15,7 @@ val text: String = "Hello World"
 val numbers: Array<Int> = arrayOf(1, 2 , 3)
 val strings: List<String> = listOf("one", "two", "three")
 val string: MutableList<String> = mutableListOf("one", "two", "three")
-val doubles: List<Double> = setOf(23.3, 56.8)
+val doubles: Set<Double> = setOf(23.3, 56.8)
 val keysToValues: Map<String, String> = mapOf()
 
 val anything: Any = false
