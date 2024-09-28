@@ -1,3 +1,5 @@
+@file:Suppress("UNREACHABLE_CODE")
+
 package org.example.kotlincourse.lesson6
 
 import java.time.Month
@@ -5,57 +7,55 @@ import java.time.Month
 //Задание 1: "Определение Сезона"
 //Контекст: Напишите функцию, которая на основе номера месяца возвращает сезон года.
 fun main () {
+    println(seasonOfTheYear(month))
 }
-fun determineSeason(month: Int): String {
-    if (month !in 1..12) {
-        return "Неверный месяц"
-    }
-    return when (month) {
-        in 12..2 -> "Зима"
-        in 3..5 -> "Весна"
-        in 6..8 -> "Лето"
-        in 9..11 -> "Осень"
-        else -> "Неверный месяц"
-    }
-}
+val month = 12
+fun seasonOfTheYear (month: Int): String {
+
+        return when (month) {
+            !in 1..12 -> "Неверно указан месяц"
+            in 3..5 -> "Весна"
+            in 6..8 -> "Лето"
+            in 9..11 -> "Осень"
+            else -> "Зима"
+        }
 
 //Задание 2: "Расчет Возраста Питомца"
 //преобразовать возраст собаки в "человеческие" годы.
 
-fun calculateDogAge(dogYears: Int): String {
-    if (dogYears < 0) {
-        return "Алярм! Пёсий возраст не может быть отрицательным"
+val pupAge = 20.0
+fun pupAgeIntoHumanAge (pupAge: Double): Double {
+    return if (pupAge <= 0.0) throw Exception("")
+    else if (pupAge <= 2.0) pupAge * 10.5
+    else (pupAge - 2) * 4 + 21
+
     }
-    val humanYears = if (dogYears <= 2) {
-        dogYears * 10.5
-    } else {
-        2 * 10.5 + (dogYears - 2) * 4
-    }
-    return "Возраст собаки в человеческих годах: $humanYears"
 }
 
 //Задание 3: Определение Вида Транспорта
 //какой вид транспорта лучше использовать, исходя из длины маршрута.
-
-fun determineTransport(distance: Double): String {
+val distance = 3.0
+fun getVehicleType(distance: Double): String {
     // Проверяем расстояние и возвращаем соответствующий вид транспорта
     return when {
-        distance <= 1 -> "пешком" // Если маршрут до 1 км
-        distance <= 5 -> "велосипед" // Если маршрут от 1 до 5 км
+    distance <= 0.0 -> "Не выходи из дома не совершай ошибку"
+    distance <= 1.0 -> "пешком" // Если маршрут до 1 км
+    distance <= 5.0 -> "велосипед" // Если маршрут от 1 до 5 км
         else -> "автотранспорт" // Если маршрут больше 5 км
     }
 }
 //Задание 4: Расчет Бонусных Баллов
 //
-fun calculateBonus(purchaseAmount: Double): Int {
+val price = 11
+fun calculateBonusPoints(price: Int): Int {
     // Если сумма покупки до 1000 рублей, начисляем 2 балла за каждые 100
-    return if (purchaseAmount <= 1000) {
-        (purchaseAmount / 100 * 2).toInt()
-    } else {
-        // Если сумма покупки выше 1000, начисляем 5 баллов за каждые 100
-        (purchaseAmount / 100 * 5).toInt()
-    }
+    if (price < 0) throw Exception("")
+    val dif = price / 100
+    val coef = if (price < 1000) 2 else 5
+    return dif * coef
 }
+
+
 
 // Задание 5: Определение Типа Документа
 fun determineDocumentType(extension: String): String {
@@ -70,18 +70,20 @@ fun determineDocumentType(extension: String): String {
 
 //Задание 6: Конвертация Температуры
 //
-fun convertTemperature(value: Double, unit: String): String {
+fun temperatureConversion(temperatureforConv: Int, measureSystem: String): String {
     // Проверяем, в каких единицах измерения передана температура
-    return if (unit.uppercase() == "C") {
-        // Если цельсий, конвертируем в фаренгейты
-        val fahrenheit = value * 9 / 5 + 32
-        "$fahrenheit F" // Возвращаем результат в формате "значение F"
-    } else {
-        // Если фаренгейт, конвертируем в цельсии
-        val celsius = (value - 32) * 5 / 9
-        "$celsius C" // Возвращаем результат в формате "значение C"
+    var totalResult: String
+    if (measureSystem == "C")
+    {
+        totalResult = "${temperatureforConv * 1.8 + 32} F"
+    }   else if (measureSystem == "F")
+    {
+        totalResult = "${temperatureforConv - 32 / 1.8} C"
+    } else
+    {totalResult = "Error"}
+    return totalResult
     }
-}
+
 
 //Задание 7
 fun recommendClothing(temperature: Double): String {
@@ -93,6 +95,17 @@ fun recommendClothing(temperature: Double): String {
         else -> "футболка и шорты" // Тепло
     }
 }
+// ВТОРОЙ ВАРИАНТ РЕШЕНИЯ ЗАДАЧИ ОТ САШИ
+fun whichCloses(temperature: Int): String {
+
+    return when(temperature) {
+        in -30 until 0 -> "куртка и шапка"
+        in 0..15 -> "ветровка"
+        in 16..35 ->  "футболка и шорты"
+        else -> "не выходить из дома"
+    }
+}
+
 
 //Задание 8
 fun chooseMovieCategory(age: Int): String {
