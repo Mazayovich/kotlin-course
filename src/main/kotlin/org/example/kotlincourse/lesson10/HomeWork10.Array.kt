@@ -1,111 +1,109 @@
-package org.example.kotlincourse.lesson10
-
-// Тестирование функций
 fun main() {
-    // тест!
-    println(createAndInitializeArray().toList())
-    println(createEmptyStringArray().toList())
-    println(fillDoubleArray().toList())
-    println(fillIntArrayWithIndexTimesThree().toList())
-    println(createNullableStringArray().toList())
-
-    val originalArray = arrayOf(1, 2, 3, 4, 5)
-    println(copyArray(originalArray).toList())
-
-    val array1 = arrayOf(10, 20, 30)
-    val array2 = arrayOf(1, 2, 3)
-    println(subtractArrays(array1, array2).toList())
-
-    println(findIndexOfFive(arrayOf(1, 5, 3, 7, 9)))
-
-    printEvenOrOdd(arrayOf(1, 2, 3, 4, 5))
-
-    println(findSubstring(arrayOf("hello", "world", "test"), "wo"))
+    createAndInitializeArray()
+    createEmptyStringArray()
+    fillArrayWithDoubleIndexes()
+    modifyArrayElements()
+    createNullableStringArray()
+    copyArray()
+    subtractArrays()
+    findElementIndex()
+    iterateArray()
+    searchSubstringInArray(arrayOf("apple", "banana", "cherry"), "an")
 }
 
-
-
 // Задание 1: Создание и Инициализация Массива
-fun createAndInitializeArray(): Array<Int> {
-    return arrayOf(1, 2, 3, 4, 5)
+fun createAndInitializeArray() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    println(array.toList())
 }
 
 // Задание 2: Создание Пустого Массива
-fun createEmptyStringArray(): Array<String> {
-    return Array(10) { "" }
+fun createEmptyStringArray() {
+    val emptyArray = Array(10) { "" }
+    println(emptyArray.toList())
 }
 
 // Задание 3: Заполнение Массива в Цикле
-fun fillDoubleArray(): Array<Double> {
-    val doubleArray = Array(5) { 0.0 }
-    for (i in doubleArray.indices) {
-        doubleArray[i] = i * 2.0
+fun fillArrayWithDoubleIndexes() {
+    val array = Array(5) { 0.0 }
+    for (i in array.indices) {
+        array[i] = i * 2.0
     }
-    return doubleArray
+    println(array.toList())
 }
 
 // Задание 4: Изменение Элементов Массива
-fun fillIntArrayWithIndexTimesThree(): Array<Int> {
-    val intArray = Array(5) { 0 }
-    for (i in intArray.indices) {
-        intArray[i] = i * 3
+fun modifyArrayElements() {
+    val array = Array(5) { 0 }
+    for (i in array.indices) {
+        array[i] = i * 3
     }
-    return intArray
+    println(array.toList())
 }
 
 // Задание 5: Работа с Nullable Элементами
-fun createNullableStringArray(): Array<String?> {
-    return arrayOf(null, "Hello", "World")
+fun createNullableStringArray() {
+    val array = arrayOfNulls<String>(3)
+    array[0] = null
+    array[1] = "Hello"
+    array[2] = "World"
+    println(array.toList())
 }
 
 // Задание 6: Копирование Массива
-fun copyArray(original: Array<Int>): Array<Int> {
-    val copiedArray = Array(original.size) { 0 }
-    for (i in original.indices) {
-        copiedArray[i] = original[i]
+fun copyArray() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    val copiedArray = Array(array.size) { 0 }
+    for (i in array.indices) {
+        copiedArray[i] = array[i]
     }
-    return copiedArray
+    println(copiedArray.toList())
 }
 
 // Задание 7: Разница Двух Массивов
-fun subtractArrays(array1: Array<Int>, array2: Array<Int>): Array<Int> {
+fun subtractArrays() {
+    val array1 = arrayOf(10, 20, 30, 40, 50)
+    val array2 = arrayOf(5, 10, 15, 20, 25)
     val resultArray = Array(array1.size) { 0 }
     for (i in array1.indices) {
         resultArray[i] = array1[i] - array2[i]
     }
-    return resultArray
+    println(resultArray.toList())
 }
 
 // Задание 8: Поиск Индекса Элемента
-fun findIndexOfFive(array: Array<Int>): Int {
+fun findElementIndex() {
+    val array = arrayOf(1, 2, 3, 4, 6)
     var index = 0
+    var foundIndex = -1
     while (index < array.size) {
         if (array[index] == 5) {
-            return index
+            foundIndex = index
+            break
         }
         index++
     }
-    return -1
+    println(foundIndex)
 }
 
 // Задание 9: Перебор Массива
-fun printEvenOrOdd(array: Array<Int>) {
-    for (element in array) {
-        if (element % 2 == 0) {
-            println("$element - четное")
+fun iterateArray() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    for (num in array) {
+        if (num % 2 == 0) {
+            println("$num: чётное")
         } else {
-            println("$element - нечетное")
+            println("$num: нечётное")
         }
     }
 }
 
 // Задание 10: Поиск Значения в Массиве по вхождению
-fun findSubstring(array: Array<String>, substring: String): String? {
+fun searchSubstringInArray(array: Array<String>, searchString: String) {
     for (element in array) {
-        if (element.contains(substring)) {
-            return element
+        if (element.contains(searchString)) {
+            println(element)
+            break
         }
     }
-    return null
 }
-
