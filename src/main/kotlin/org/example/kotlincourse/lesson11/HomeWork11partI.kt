@@ -1,6 +1,5 @@
 package org.example.kotlincourse.lesson11
 
-package org.example.kotlincourse.lesson11
 
 fun main() {
     // Задание 1: Создание Пустого Словаря
