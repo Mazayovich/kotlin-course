@@ -1,11 +1,6 @@
 package org.example.kotlincourse.lesson12
 //задача 1
-//Функция createHorizontalBorder:
-//Отвечает за создание верхней и нижней границ прямоугольника,
-// возвращая строку с нужной рамкой для заданной ширины.
-//Функция printMiddleLines:
-//Формирует и выводит боковые границы с заполнением
-// пробелами между ними для создания тела прямоугольника.
+
 fun drawRectangle(width: Int, height: Int) {
     if (width <= 0) throw IllegalArgumentException("width должно быть положительным и больше нуля")
     if (height <= 0) throw IllegalArgumentException("height должно быть положительным и больше нуля")
@@ -38,12 +33,7 @@ private fun printMiddleLines(width: Int, height: Int) {
 //задание для тех, кому скучно
 //Устранение "разъезжания" таблицы:
 //
-//Теперь используется maxOf для вычисления размера форматирования (formatterSize).
-// Это обеспечивает одинаковую ширину для ячеек таблицы, независимо от значений xSize и ySize.
-//Вспомогательная функция generateRange:
-//
-//Изолирует логику создания диапазонов для осей X и Y,
-// упрощая основную функцию и повышая читаемость кода.
+
 
 //итог кода:
 fun printMap(xSize: Int, ySize: Int) {
