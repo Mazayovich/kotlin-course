@@ -24,11 +24,11 @@ println("$key : $value")
 val myOneMap: Map<String, List<Int>> = mapOf("St" to listOf(1, 2, 4))
 
 
-fun searchKey(myMap:Map<String, String>, word:String) {
-
-    for((key, value) in myMap){
-        if (value==word) return key1
-    }
+//fun searchKey(myMap:Map<String, String>, word:String) {
+//
+//    for((key, value) in myMap){
+//        if (value==word) return key1
+//    }
 
 }
 
