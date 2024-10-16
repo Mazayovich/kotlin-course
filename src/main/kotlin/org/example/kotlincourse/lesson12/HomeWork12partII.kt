@@ -1,9 +1,7 @@
 package org.example.kotlincourse.lesson12
 
 // Задача 1
-fun multiplyByTwo(number: Int): Int {
-    return number * 2
-}
+fun multiplyByTwo(number: Int): Int = number * 2
 
 // Задача 2
 fun isEven(number: Int): Boolean {
