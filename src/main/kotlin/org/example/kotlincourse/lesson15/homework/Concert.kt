@@ -12,7 +12,7 @@ class Concert(
 { private var soldTickets: Int = 0
 
   fun details(){
-      println("Привет! Концерт группы $band состоится тут: $place, стоимость билета - $price" +
+      println("Привет! Концерт группы $band состоится тут: $place, стоимость билета - $price," +
       " вместимость зала - $capacity.")
       println("проданных билетов - $soldTickets")
 
