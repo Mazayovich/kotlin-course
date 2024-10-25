@@ -12,8 +12,8 @@ fun main() {
     Logger.log("saff")
     val result=Calculator.add(1,4)
 
-    val myLampe=Lamp(true)
-    myLampe.switch()
+    val myLamp=Lamp(true)
+    myLamp.switch()
 
     val myWind=Wind(300)
 
@@ -22,3 +22,5 @@ fun main() {
     val carOne =Car(Car.brands[0], "vesta")
     carOne.sayMyName()
 }
+
+
