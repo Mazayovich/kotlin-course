@@ -13,7 +13,7 @@ class Concert(
 
   fun details(){
       println("Привет! Концерт группы $band состоится тут: $place, стоимость билета - $price" +
-      "вместимость зала - $capacity.")
+      " вместимость зала - $capacity.")
       println("проданных билетов - $soldTickets")
 
   }
