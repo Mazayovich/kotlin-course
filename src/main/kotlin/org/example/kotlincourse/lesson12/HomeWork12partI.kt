@@ -6,9 +6,10 @@ fun doNothing() {
 }
 
 // Функция, которая принимает два целых числа и возвращает их сумму
-fun sum(a: Int, b: Int): Int {
-    return a + b
-}
+//fun sum(a: Int, b: Int): Int {
+   // return a + b
+// }
+
 
 // Функция, которая принимает строку и ничего не возвращает
 fun printString(value: String) {
