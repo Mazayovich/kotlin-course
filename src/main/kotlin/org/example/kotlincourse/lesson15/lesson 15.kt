@@ -22,6 +22,3 @@ fun main() {
     val carOne =Car(Car.brands[0], "vesta")
     carOne.sayMyName()
 }
-
-
-
