@@ -74,16 +74,16 @@ fun main() {
         Section(ItemType.VEGETABLE, 2700)
     )
 
-    val fridge = Fridge(12)
-
-    sections.forEach { fridge.addSection(it) }
-    items.forEach {
-        if (!fridge.addItem(it)) {
-            println("Не добавлено")
-            println(it)
-        }
-    }
-    fridge.viewFridge()
+//    val fridge = Fridge(12)
+//
+//    sections.forEach { fridge.addSection(it) }
+//    items.forEach {
+//        if (!fridge.addItem(it)) {
+//            println("Не добавлено")
+//            println(it)
+//        }
+//    }
+//    fridge.viewFridge()
 }
 
 object ItemType {
@@ -114,15 +114,15 @@ class Section(
 
     val items = mutableListOf<Item>()
 
-    fun addItem(item: Item): Boolean{
-        val itemVolume = convertWeightToVolume(item)
-        return if (getFreeSpace() >= itemVolume) {
-            items.add(item)
-            true
-        } else {
-            false
-        }
-    }
+//    fun addItem(item: Item): Boolean{
+//        val itemVolume = convertWeightToVolume(item)
+//        return if (getFreeSpace() >= itemVolume) {
+//            items.add(item)
+//            true
+//        } else {
+//            false
+//        }
+//    }
 
     fun findItemByName(name: String): Item?{
         return items.find { it.name == name }
@@ -131,27 +131,27 @@ class Section(
     fun remove(item: Item): Boolean{
         return items.remove(item)
     }
-
-    fun getFreeSpace(): Int {
-        val usedSpace = items.sumOf { convertWeightToVolume(it) }
-        return capacity - usedSpace
-    }
+//
+//    fun getFreeSpace(): Int {
+//        val usedSpace = items.sumOf { convertWeightToVolume(it) }
+//        return capacity - usedSpace
+//    }
 }
 
 
-    fun formatData(): String {
-        return """
-type: $type
-   capacity: $capacity
-   free: ${getFreeSpace()}
-   items:
-       ${items.joinToString("\n\t\t")}
-       """.trimIndent()
-    }
-
-    private fun convertWeightToVolume(item: Item): Int {
-        return (item.weight / conversionFactors.getValue(item.type)).toInt()
-    }
+//    fun formatData(): String {
+//        return """
+//type: $type
+//   capacity: $capacity
+//   free: ${getFreeSpace()}
+//   items:
+//       ${items.joinToString("\n\t\t")}
+//       """.trimIndent()
+//    }
+//
+//    private fun convertWeightToVolume(item: Item): Int {
+//        return (item.weight / conversionFactors.getValue(item.type)).toInt()
+//    }
 
 
 
@@ -185,14 +185,14 @@ class Fridge(val capacity: Int) {
         return itemsToRedistribute
     }
 
-    fun addItem(item: Item): Boolean{
-        for (section in sections) {
-            if (section.addItem(item)) {
-                return true
-            }
-        }
-        return false
-    }
+//    fun addItem(item: Item): Boolean{
+//        for (section in sections) {
+//            if (section.addItem(item)) {
+//                return true
+//            }
+//        }
+//        return false
+//    }
 
     fun findItemByNameAndType(name: String, type: String): Item?{
         return sections
@@ -217,12 +217,12 @@ class Fridge(val capacity: Int) {
             count += itemsToRemove.size
             itemsToRemove.forEach { section.remove(it) }
         }
-        return count
+//        return count
     }
 
-    fun viewFridge() {
-
-        println(sections.joinToString("\n\n") { it.formatData() })
-    }
+//    fun viewFridge() {
+//
+//        println(sections.joinToString("\n\n") { it.formatData() })
+//    }
 }
 
