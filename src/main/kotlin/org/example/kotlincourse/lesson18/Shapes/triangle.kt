@@ -10,3 +10,4 @@ class Triangle(
 ) : Shape() {
     override fun area(): Double = 0.5 * sideA * sideB * sin(toRadians(angle))
 }
+

@@ -8,3 +8,4 @@ fun main() {
     )
     shapes.forEach { shape -> println("Area: ${shape.area()}") }
 }
+
