@@ -1,5 +1,23 @@
 package org.example.kotlincourse.lesson20
 
-class Flashlight (
-     val deviceId : String
-) : Powerable, LightEmitting, BatteryOperated
+import BatteryOperated
+import LightEmitting
+
+class Flashlight : BatteryOperated, LightEmitting {
+     override fun getCapacity(): Double {
+          TODO("Not yet implemented")
+     }
+
+     override fun replaceBattery() {
+          TODO("Not yet implemented")
+     }
+
+     override fun emitLight() {
+          TODO("Not yet implemented")
+     }
+
+     override fun completeLiteEmission() {
+          TODO("Not yet implemented")
+     }
+
+}

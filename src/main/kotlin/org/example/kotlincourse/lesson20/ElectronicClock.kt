@@ -1,5 +1,9 @@
 package org.example.kotlincourse.lesson20
 
-class ElectronicClock (
-     val deviceId : String
-) : Powerable, Timable
+import Timable
+
+class ElectronicClock : PowerableDevice(), Timable {
+     override fun setTimer(time: Int) {
+          TODO("Not yet implemented")
+     }
+}

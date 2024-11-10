@@ -1,5 +1,12 @@
 package org.example.kotlincourse.lesson20
 
-abstract class Refrigerator (
-    override val deviceId : String
-): Powerable, Openable, TemperatureRegulatable
+import WaterContainer
+
+
+abstract class Refrigerator : TemperatureOpenableDevice(), WaterContainer {
+    override val capacity : Int = 10
+    override fun fillWater(amount: Int){}
+    override fun getWater(amount: Int) {
+    }
+
+}

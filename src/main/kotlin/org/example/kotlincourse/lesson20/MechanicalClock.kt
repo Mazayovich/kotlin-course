@@ -1,5 +1,9 @@
 package org.example.kotlincourse.lesson20
 
-abstract class MechanicalClock (
-     val deviceId : String
-) : Mechanical
+import Mechanical
+
+abstract class MechanicalClock : Mechanical {
+     override fun performMechanicalAction() {
+          TODO("Not yet implemented")
+     }
+}
