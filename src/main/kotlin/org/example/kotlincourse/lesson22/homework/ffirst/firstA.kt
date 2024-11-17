@@ -1,4 +1,4 @@
-package org.example.kotlincourse.lesson22.homework.first
+package org.example.kotlincourse.lesson22.homework.ffirst
 
 fun Array<Int>.toMinMaxPair(): Pair<Int, Int>? {
     if(this.isEmpty()) return null

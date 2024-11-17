@@ -1,4 +1,4 @@
-package org.example.kotlincourse.lesson22.homework.first
+package org.example.kotlincourse.lesson22.homework.ffirst
 
 fun main(){
     //1
